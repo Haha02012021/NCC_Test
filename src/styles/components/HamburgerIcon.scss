@@ -1,0 +1,100 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+.hamgurger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    appearance: none;
+    padding-inline: 0;
+    padding-block: 0;
+    border: 0;
+    margin: 0;
+    height: fit-content;
+    background-color: transparent;
+
+    &__line {
+        width: 16px;
+        height: 2px;
+        background-color: $color-erie-black;
+        display: block;
+        border-radius: 8px;
+        @include transition;
+
+        &--open {
+            &:first-child {
+                transform: rotate(45deg) translate(4px, 6px);
+                animation: openFirstLine 300ms 1;
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:last-child {
+                transform: rotate(-45deg) translate(4px, -6px);
+                animation: openLastLine 300ms 1;
+            }
+        }
+
+        &--close {
+            &:first-child {
+                transform: rotate(0) translate(0);
+                animation: closeFirstLine 300ms 1;
+            }
+
+            &:nth-child(2) {
+                opacity: 1;
+            }
+
+            &:last-child {
+                transform: rotate(0) translate(0);
+                animation: closeLastLine 300ms 1;
+            }
+        }
+    }
+
+    &--open {
+        animation: open 300ms 1;
+    }
+}
+
+@keyframes openFirstLine {
+    0% {
+        transform: rotate(0) translate(0, 0);
+    }
+
+    100% {
+        transform: rotate(45deg) translate(4px, 6px);
+    }
+}
+
+@keyframes openLastLine {
+    0% {
+        transform: rotate(0) translate(0, 0);
+    }
+
+    100% {
+        transform: rotate(-45deg) translate(4px, -6px);
+    }
+}
+
+@keyframes closeFirstLine {
+    0% {
+        transform: rotate(45deg) translate(4px, 6px);
+    }
+
+    100% {
+        transform: rotate(0) translate(0);
+    }
+}
+
+@keyframes closeLastLine {
+    0% {
+        transform: rotate(-45deg) translate(4px, -6px);
+    }
+
+    100% {
+        transform: rotate(0) translate(0);
+    }
+}

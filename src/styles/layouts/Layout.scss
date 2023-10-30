@@ -1,0 +1,39 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+.layout {
+    width: 100vw;
+    font-family: $font-family;
+
+    &__page {
+        width: $page-width;
+        position: absolute;
+        left: $sidebar-width;
+        overflow-x: hidden;
+
+        @include respond-to('small') {
+            width: 100%;
+            left: 0;
+        }
+    }
+}
+
+.footer {
+    height: 79px;
+    border-top: 1px solid $color-gainsboro;
+    display: flex;
+    align-items: center;
+
+    &__text {
+        color: $color-black-olive;
+        padding: 0 129px;
+
+        @include respond-to('medium') {
+            padding: 0 60px;
+        }
+    
+        @include respond-to('small') {
+            padding: 0 20px;
+        }
+    }
+}

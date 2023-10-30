@@ -1,0 +1,48 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+.sidebar {
+    background-color: $color-erie-black;
+    width: $sidebar-width;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    &__menu {
+        margin: 0;
+        padding-inline-start: 0;
+    }
+
+    @include respond-to('small') {
+        padding-top: 44px;
+        display: none;
+        width: 100%;
+        z-index: 1;
+
+        &--small {
+            display: block;
+        }
+    }
+}
+
+.menu-icon {
+    display: none;
+    z-index: 2;
+    position: relative;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    @include respond-to('small') {
+        display: block;
+
+        &--white {
+            .hamgurger-icon {
+                &__line {
+                    background-color: $color-white;
+                }
+            }
+        }
+    }
+}

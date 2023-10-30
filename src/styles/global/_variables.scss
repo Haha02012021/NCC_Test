@@ -1,0 +1,33 @@
+$font-regular: 400;
+$font-semibold: 700;
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-Regular.ttf);
+  font-weight: $font-regular;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-Bold.ttf);
+  font-weight: $font-semibold;
+}
+
+$font-family: 'Roboto';
+
+$color-davi-grey: #5C5C5C;
+$color-white: #FFF;
+$color-erie-black: #191718;
+$color-dark-gray: #AAAAAA;
+$color-bright-gray: #EFEFEF;
+$color-gainsboro: #DEDEDE;
+$color-black-olive: #3E3E3E;
+
+$sidebar-width: 150px;
+$page-width: calc(100% - $sidebar-width);
+
+$breakpoints: (
+  'small': (max-width: 576px),
+  'medium': (max-width: 768px),
+  'large': (max-width: 992px),
+  'extra-large': (max-width: 1280px)) !default;

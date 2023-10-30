@@ -1,0 +1,29 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+.menu-item {
+    height: 44px;
+    border: 1px solid $color-davi-grey;
+    border-left: 0;
+    border-right: 0;
+    color: $color-dark-gray;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    text-decoration: none;
+    font-weight: $font-semibold;
+    @include transition;
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-davi-grey;
+    }
+
+    &--active {
+        color: $color-white;
+    }
+
+    &__label {
+        list-style: none;
+    }
+}

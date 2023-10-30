@@ -1,0 +1,120 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+.home {
+    padding: 0 129px;
+
+    @include respond-to('large') {
+        padding: 0 60px;
+    }
+
+    @include respond-to('small') {
+        padding: 0 20px;
+    }
+}
+
+.logo {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &__img {
+        width: 310px;
+        height: 122px;
+        object-fit: contain;
+
+        @include respond-to('small') {
+            width: 20%;
+            height: auto;
+        }
+    }
+
+    .hamgurger-icon {
+        display: none;
+    }
+
+    @include respond-to('small') {
+        justify-content: space-between;
+
+        .hamgurger-icon {
+            display: flex;
+        }
+    }
+}
+
+.des-box {
+    background-color: $color-bright-gray;
+    padding: 38px 269px;
+    text-align: center;
+    margin-bottom: 40px;
+
+    &__title {
+        font-size: 18px;
+        font-weight: $font-semibold;
+        margin: 0;
+        margin-bottom: 18px;
+    }
+
+    &__content {
+        margin: 0;
+    }
+
+    @include respond-to('extra-large') {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    @include respond-to('large') {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    @include respond-to('small') {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.grid-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 182px;
+
+    &__title {
+        font-size: 24px;
+        font-weight: $font-semibold;
+        margin: 0;
+        margin-bottom: 18px;
+    }
+
+    &__text {
+        margin: 0;
+    }
+    
+    &__img {
+        width: 128px;
+        height: 128px;
+        object-fit: contain;
+        float: left;
+
+        @include respond-to('small') {
+            width: 80%;
+            height: auto;
+            float: none;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    @include respond-to('extra-large') {
+        grid-template-columns: 1fr;
+    }
+
+    @include respond-to('small') {
+        margin-bottom: 120px;
+    }
+}
