@@ -29,7 +29,6 @@
 .menu-icon {
     display: none;
     z-index: 2;
-    position: relative;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -38,6 +37,8 @@
         display: block;
 
         &--white {
+            position: fixed;
+
             .hamgurger-icon {
                 &__line {
                     background-color: $color-white;
