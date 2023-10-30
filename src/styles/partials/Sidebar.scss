@@ -12,6 +12,12 @@
     &__menu {
         margin: 0;
         padding-inline-start: 0;
+
+        .menu-item {
+            &:not(:first-child) {
+                border-top: 0;
+            }
+        }
     }
 
     @include respond-to('small') {
