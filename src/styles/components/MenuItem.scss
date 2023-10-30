@@ -26,4 +26,9 @@
     &__label {
         list-style: none;
     }
+    
+    @include respond-to('small') {
+        padding-left: 0;
+        justify-content: center;
+    }
 }
